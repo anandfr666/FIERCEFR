@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snuff Bio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Embed Do DC -->
+    <meta content="FIERCE BIO " property="og:title" />
+    <meta content="Bio of Fierce" property="og:description" />
+    <meta content="HOSTINN" property="og:url" />
+    <meta content="https://postimage.me/image/1000037284.UMCDGy" property="og:image" />
+    <meta content="#4D4DFF" data-react-helmet="true" name="theme-color" />
+
+    <style>
+        /* General styles */
+  
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="dodgechallengermain.mp4" type="video/mp4" />
+        </video>
+        <!-- Background Music -->
+        <audio id="bgMusic" loop>
+            <source src="mainaudio.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+
+    <!-- Content Section -->
+    <div class="caption">
+        <div class="card-container">
+            <div class="card">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="https://media-hosting.imagekit.io/f26e2b4123fe4fd7/New Project 2 [412A1E8].png?Expires=1837717539&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=nJHO0hNRpUUeVeyc6ZG47bFv3dtrH6wc0Z6Mw-C0x1uaHK22KmpLBv0ZknIu0f08VL-BX9QD-Zq-3T9yMkdwRfYgtZ~dLgzperrQrIKiQs05219xVZBGvE51RFNzZq8HstL4DqiPLIo51cnquO11aN0bpQ30Ion-AaQlPfAb8TVSksmS7uYYGBGrfFzSjFatO71lp3SXL9gV5beZyGmo6haC1hw0xAkwFoXVTQnYVmjAEp3c2Xcqm6gCmyGRG6eXTseP0XwsNWy7oLeGz6LCnuVg7TwjJlhoTO7e3edBYQmymlpagvetA52rcsEI3MdFwIzISU1emtMTULBnhLPRNQ__" alt="Loading...">
+                </div>
+                <!-- Name -->
+                <div class="nick">FIERCE</div>
+                <!-- Links -->
+                <div class="icon-links">
+                    <a href="https://t.me/FIERCEFR" target="_blank"><i class="fab fa-telegram"></i></a>                    
+                    <a href="https://www.instagram.com/xw1fr" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <!-- Song Card -->
+                <div class="song-card">
+                    <div class="song-cover">
+                        <img src="https://media-hosting.imagekit.io/a618efc57ae548a3/IMG_20250216_121220.png?Expires=1837716104&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=fLAbkiBPixq2s6PgiheK7CSmQcNZQsKTI0daw2YJ9Al61DLObce2XW-v1DQSU~l976-pcLH2KBAFuK-v8anw78hQR0YVrr7oJI-siOiK7RZtV8FrpC2M1czXApU-GqbM9DIISzsWVM9IkYfAyaWMUO~oEx0DdG7~mYiWH~GaCRJA-XbjHB510lC86D0kE8mIeUBmxbOB3qYqfpemwuoi5MZda5O79FcszVG-mTPY5cUSMSaj4ofFX9u-UXNDwEbevfM5xnCi6wqWtsWQmCz-ODlyVe5A7c4weMtInH6dcruHFbpDxjWyxraAwQN~wXsgAOC00uwn-KWp7VC--mqWag__" alt=" Loading...">
+                    </div>
+                    <div class="song-info">
+                        <div class="song-title">——</div>
+                        <div class="song-author">Fierce</div>
+                        <div class="song-title">——</div>
+                         <div class="song-author">Age : 17 </div>
+                         <div class="song-title">——</div>
+                          <div class="song-author"> | Editor | </div>
+                          <div class="song-title">——</div>
+                          <div class="song-author">Plugger(Left)</div>
+                          <div class="song-title">——</div>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Control Button -->
+    <div class="audio-control" id="audioControl">
+        <div class="audio-icon" id="audioIcon"><i class="fas fa-volume-mute"></i></div>
+        <div class="audio-text" id="audioText">Tap To Play Music</div>
+    </div>
+
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        const audioControl = document.getElementById('audioControl');
+        const audioIcon = document.getElementById('audioIcon');
+        const audioText = document.getElementById('audioText');
+
+        let isPlaying = false;
+
+        // Function to toggle audio play/pause
+        function toggleAudio() {
+            if (isPlaying) {
+                bgMusic.pause();
+                audioIcon.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                bgMusic.play();
+                audioIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Function to animate text
+        function animateText() {
+            audioText.classList.add('active');
+            setTimeout(() => {
+                audioText.classList.remove('active');
+            }, 4000);
+
+            // Repeat animation every 5 seconds
+            setTimeout(animateText, 5000);
+        }
+
+        // Initial call to animate text
+        animateText();
+
+        // Add click event listener to toggle audio
+        audioControl.addEventListener('click', toggleAudio);
+    </script>
+</body>
+</html>
